@@ -13,3 +13,4 @@ output "path" {
     description = "The path of the IAM user"
     value       = aws_iam_user.main.path
 }
+
