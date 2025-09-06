@@ -3,7 +3,7 @@
 
 module "aws_iam_policy" {
   # Path to the reusable IAM module
-  source = "../../../_modules/iam_policy"
+  source = "../../../_modules/iam/iam_policy"
 
   for_each = {
     "s3-readonly-policy" = {

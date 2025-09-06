@@ -5,7 +5,7 @@ locals {
 
 module "iam_user" {
   # Path to the reusable IAM module
-  source = "../../../_modules/iam"
+  source = "../../../_modules/iam/iam_user"
 
   for_each = {
     "support-user"   = { path = "/demo_users/" }
