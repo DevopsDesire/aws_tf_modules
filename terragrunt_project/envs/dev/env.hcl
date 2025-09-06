@@ -6,8 +6,6 @@ locals {
   application = "wet"
 
   aws_tf_state_bucket = "dyg-terraform-state"
-
-
   name_prefix = "${local.project}-${local.environment}-${local.application}"
 
 

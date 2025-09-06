@@ -40,4 +40,3 @@ terraform.rc
 provider_config.tf
 
 **/.terragrunt-cache
-env.hcl
