@@ -23,7 +23,7 @@ resource "aws_iam_group_membership" "membership" {
 
   for_each = var.attach_user ? toset(var.user_names) : toset([])
 
-  name = "group-membership"
+  name  = "group-membership"
   users = [each.value]
   group = aws_iam_group.group.name
 }

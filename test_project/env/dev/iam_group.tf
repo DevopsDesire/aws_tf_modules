@@ -18,7 +18,7 @@ module "iam_group" {
 
 
   attach_user = true # if its true then attach the user arn below
-  user_names = flatten([for u in module.iam_user : u.name])
+  user_names  = flatten([for u in module.iam_user : u.name])
 
 
 }

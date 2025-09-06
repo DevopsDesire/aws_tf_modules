@@ -1,10 +1,12 @@
 locals {
-  environment_vars    = read_terragrunt_config(find_in_parent_folders("env.hcl"))
-  env_name            = local.environment_vars.locals.environment
-  region              = local.environment_vars.locals.region
+  environment_vars = read_terragrunt_config(find_in_parent_folders("env.hcl"))
+  env_name         = local.environment_vars.locals.environment
+  region           = local.environment_vars.locals.region
   #aws_access_key      = local.environment_vars.locals.aws_access_key
   #aws_secret_key      = local.environment_vars.locals.aws_secret_key
   aws_tf_state_bucket = local.environment_vars.locals.aws_tf_state_bucket
+
+
 
 }
 

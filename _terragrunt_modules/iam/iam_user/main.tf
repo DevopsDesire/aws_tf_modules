@@ -2,7 +2,7 @@
 data "aws_caller_identity" "current" {}
 
 resource "aws_iam_user" "main" {
-  for_each = var.iam_name
+  for_each      = var.iam_name
   name          = "${var.name_prefix}-${each.key}-${var.resource_type}"
   path          = each.value
   force_destroy = var.force_destroy

@@ -2,11 +2,12 @@ data "aws_caller_identity" "current" {}
 
 
 resource "aws_iam_policy" "policy" {
-  name        = var.policy_name
-  path        = var.policy_path
-  description = var.policy_description
+  for_each    = var.policy_name
+  name        = "${var.name_prefix}-${each.key}-${var.resource_type}"
+  path        = each.value.path
+  description = each.value.description
 
-  policy = var.policy_document
+  policy = each.value.document
 
   tags = merge(var.tags, {
     created_on  = timestamp()

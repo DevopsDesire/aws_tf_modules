@@ -1,16 +1,12 @@
-# output "name" {
-#   description = "The name of the IAM user"
-#   value       = aws_iam_user.main.name
+output "names" {
+  description = "The name of the IAM user"
+  value       = [ for v in aws_iam_user.main : v.name ]
 
-# }
+}
 
-# output "arn" {
-#   description = "The ARN of the IAM user"
-#   value       = aws_iam_user.main.arn
-# }
+output "arn" {
+  description = "The ARN of the IAM user"
+  value       = [ for v in aws_iam_user.main : v.arn ]
+}
 
-# output "path" {
-#   description = "The path of the IAM user"
-#   value       = aws_iam_user.main.path
-# }
 

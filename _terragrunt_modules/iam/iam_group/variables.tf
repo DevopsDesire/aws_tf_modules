@@ -1,13 +1,20 @@
 variable "group_name" {
   description = "The name of the IAM group"
+  type        = map(map(string))
+}
+
+
+
+variable "name_prefix" {
+  description = "Prefix to add to the resource name."
   type        = string
 }
 
-variable "path" {
-  description = "The path of the IAM group"
+variable "resource_type" {
+  description = "The type of the resource."
   type        = string
+  default     = "group"
 }
-
 
 variable "policy_arns" {
   description = "The ARN of the IAM policy to attach to the group"
