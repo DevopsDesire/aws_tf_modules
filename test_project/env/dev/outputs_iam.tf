@@ -1,4 +1,4 @@
-output "name" {
+output "iam_user_name" {
   description = "The name of the IAM user"
   value = try(
     [for u in module.iam_user : u.name],
@@ -6,18 +6,10 @@ output "name" {
   )
 }
 
-output "arn" {
+output "iam_user_arn" {
   description = "The ARN of the IAM user"
   value = try(
     [for u in module.iam_user : u.arn],
     [module.iam_user.arn]
-  )
-}
-
-output "path" {
-  description = "The path of the IAM user"
-  value = try(
-    [for u in module.iam_user : u.path],
-    [module.iam_user.path]
   )
 }
